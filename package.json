@@ -1,0 +1,25 @@
+{
+  "name": "little-keepsakes",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Little Keepsakes: a cozy 3D attic of small treasures to discover, restore and decorate (Three.js prototype).",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/buicongnguyen/Little_Keepsakes.git"
+  },
+  "homepage": "https://buicongnguyen.github.io/Little_Keepsakes/",
+  "scripts": {
+    "dev": "node server.mjs",
+    "start": "node server.mjs",
+    "test": "node --test tests/game.test.mjs",
+    "test:browser": "node tests/browser.mjs",
+    "build": "node scripts/build.mjs"
+  },
+  "dependencies": {
+    "three": "0.180.0"
+  },
+  "devDependencies": {
+    "esbuild": "0.28.2",
+    "playwright": "1.61.1"
+  }
+}
