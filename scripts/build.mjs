@@ -18,3 +18,7 @@ await mkdir(path.join(out, 'licenses')); await cp(path.join(root, 'node_modules/
 await writeFile(path.join(out, '.nojekyll'), '');
 await writeFile(path.join(out, 'build-info.json'), JSON.stringify({name: 'Little Keepsakes', version: JSON.parse(await readFile(path.join(root, 'package.json'), 'utf8')).version, commit: process.env.GITHUB_SHA || null}, null, 2) + '\n');
 console.log('Built dist/');
+
+// Home-screen metadata accompanies the existing bundled game.
+const { copyFile: mobileHomeScreenCopy } = await import('node:fs/promises');
+await mobileHomeScreenCopy(new URL('../manifest.webmanifest', import.meta.url), new URL('../dist/manifest.webmanifest', import.meta.url));
